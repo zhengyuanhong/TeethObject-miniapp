@@ -1,0 +1,13 @@
+.content{
+    width: 400rpx;
+    height: 400rpx;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 200rpx;
+}
+
+.botton{
+    background: green;
+    margin-top: 20rpx;
+}
+

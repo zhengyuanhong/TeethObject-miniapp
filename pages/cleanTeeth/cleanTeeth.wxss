@@ -1,0 +1,82 @@
+.box{
+  width: 95%;
+  margin:10rpx auto;
+  background: white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.show_date{
+  width: 95%;
+  background: white;
+  border-radius: 10rpx;
+  margin:20rpx auto;
+  padding: 20rpx 10rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+
+.box_content{
+  padding: 10rpx;
+  flex-basis: 25%;
+  text-align: center;
+}
+.is_appoint{
+  border: 2px solid green;
+  border-radius: 10rpx;
+}
+
+.box_content .time{
+  font-weight: bold;
+  font-size: 20rpx;
+}
+
+.box_content .success{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.success_status{
+  text-align: center;
+  padding: 10rpx 0rpx;
+}
+
+.success_status .success_text{
+  color: green;
+  font-size: 20rpx;
+}
+
+.box_content .text{
+  padding: 5rpx;
+  color: white;
+  text-align: center;
+  border-radius: 10rpx;
+  margin-top: 10rpx;
+  font-size: 20rpx;
+}
+
+.ad_img{
+  height: 200rpx;
+  width: 713rpx;
+  border-radius: 11rpx;
+  margin-top: 20rpx;
+}
+
+.card{
+  background: white;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  margin: 20rpx auto;
+  width: 95%;
+}
+
+.line{
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+
+.name{
+  font-weight: bolder;
+}

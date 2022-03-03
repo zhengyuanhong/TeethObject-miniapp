@@ -1,0 +1,27 @@
+<view class="box">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" bindinput="inputSearch" name='key' placeholder="搜索电话号码" confirm-type="search"></input>
+    </view>
+    <view class="action width">
+      <button bindtap="search" class="cu-btn bg-green shadow-blur round">搜索</button>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view wx:for="{{customers}}" wx:key='index' class="card">
+    <!-- <view class="text-green number">NO.147709511923</view> -->
+    <view class="line"><text class="name">姓名：</text><text class="content">{{item.name}}</text></view>
+    <view class="line" bindtap="callOrCp" data-index="{{index}}" ><text class="name">电话号码：</text><text class="content">{{item.phone}}</text><text class="text-green"></text><text style="font-size: 40rpx;" class='cuIcon-dianhua lg text-green'></text></view>
+    <view class="line"><text class="name">建档日期： </text><text class="content">{{item.created_at}}</text></view>
+    <view class="line"><text class="name">建档人： </text><text class="content">{{item.salesman}}</text></view>
+    <view class="line"><text class="name">备注： </text><text class="content">{{item.note?item.note:'无'}}</text></view>
+  </view>
+</view>
+
+<view wx:if='{{customers.length == 0}}' style="margin: 50rpx auto;text-align: center;">
+  <image style="width: 164rpx;height:128rpx;" src="/images/kong.png"></image>
+  <view style="margin-top: 10rpx;color: grey;">空空如也~</view>
+</view>

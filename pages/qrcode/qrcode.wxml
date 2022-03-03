@@ -1,0 +1,7 @@
+<view class="content">
+<image></image>
+</view>
+
+<view  class="padding flex flex-direction">
+    <button class="cu-btn bg-green margin-tb-sm lg">二维码下载到本地</button>
+</view>

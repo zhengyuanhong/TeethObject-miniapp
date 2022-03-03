@@ -1,0 +1,49 @@
+.bg{
+    width: 100%;
+    height: 160rpx;
+    background: #2bad41;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  
+  .container{
+    width: 90%;
+    height: 400rpx;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 100rpx;
+  }
+  
+  .form_title{
+    font-size: 45rpx;
+    /* background: white; */
+    padding: 70rpx 30rpx 0rpx 30rpx;
+    text-align: center;
+  }
+  
+  .form_submit{
+    border-radius: 10rpx;
+    background: white;
+    padding: 0 30rpx;
+  }
+  
+  .tip{
+    text-align: center;
+    border-top: 1px solid ghostwhite;
+    padding:30rpx;
+    color: gray;
+  }
+  
+  .form-botton{
+    text-align: center;
+    padding-bottom: 20rpx;
+  }
+  
+  .ad_img{
+    height: 200rpx;
+    width: 713rpx;
+    border-radius: 11rpx;
+    margin-top: 20rpx;
+  }

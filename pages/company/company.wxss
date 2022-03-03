@@ -1,0 +1,240 @@
+.container .bkg {
+  width: 100%;
+  height: 300rpx;
+  background: #2bad41;
+  border-bottom-right-radius: 15%;
+  border-bottom-left-radius: 15%;
+  background-image: linear-gradient(180deg, #2bad41, #F2F1ED);
+  display: flex;
+}
+
+.company_info{
+  display: flex;
+  background: white;
+  width: 95%;
+  margin: 20rpx auto;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  align-items: center;
+}
+
+.company_info .left image{
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.company_info .right{
+  margin-left: 20rpx;
+}
+
+.company_info .right .name{
+  font-weight: bolder;
+  font-size: 35rpx;
+}
+
+.kouqiang_content{
+  padding: 0rpx 20rpx;
+  padding-top: 72rpx;
+}
+
+.kouqiang_content .name{
+  font-weight: bolder;
+  font-size: 45rpx;
+}
+.kouqiang_content .tip{
+  padding-top: 20rpx;
+  font-size: 30rpx;
+}
+
+.margin-top{
+  margin-top: 20rpx;
+}
+
+.container .content {
+  position: relative;
+  height: 500rpx;
+  bottom: 44rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.container .kanya_vip{
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+.container .kanya_vip .img{
+  border-radius: 10rpx;
+}
+
+.width-95{
+  width: 95%;
+  margin: 10rpx auto;
+}
+
+.container .content .common {
+  background: white;
+  padding: 10rpx 20rpx;
+  border-radius: 11rpx;
+}
+
+.container .content .menu_list{
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10rpx;
+}
+
+.container .content .menu_right{
+  flex-basis: 50%;
+}
+
+.container .content .menu_right .menu_right_bottom{
+  background: white;
+  border-radius: 10rpx;
+  padding: 20rpx 10rpx 20rpx 10rpx;
+  display: flex;
+}
+.menu_right_bottom .menu_content{
+  margin-left: 10rpx;
+}
+.menu_right_bottom .menu_content .menu_title{
+  font-weight: bolder;
+  font-size: 32rpx;
+}
+.menu_right_bottom .menu_content .menu_tip{
+font-size: 25rpx;
+color: gray;
+margin-top: 5rpx;
+}
+
+
+
+/* 滚动CSS */
+.container .content .notice{
+  display: flex;
+  align-items: center;
+}
+
+.container .content .notice .left{
+  flex-basis: 21%;
+  font-weight: bolder;
+  font-style: oblique;
+}
+
+.container .content .swiper_container {
+  height: 44rpx;
+  flex-basis: 79%;
+  margin-top:10rpx;
+}
+
+.container .content .right-icon{
+  line-height: 95rpx;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+.container .content .notice_content{
+  display: flex;
+  align-items: center;
+}
+
+.container .content .swiper_item {
+  font-size: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  /* align-items: center; */
+  /* flex-basis: 75%; */
+}
+
+.container .content .notice_content .time{
+  font-size: 25rpx;
+  margin-top: 5rpx;
+}
+
+.container .content .ad_swiper{
+  height: 200rpx;
+}
+
+.container .content .ad_img{
+  height: 200rpx;
+  width: 713rpx;
+  border-radius: 11rpx;
+  margin: 0 auto;
+}
+
+.index_title{
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+
+}
+
+.map_title{
+  font-weight: bolder;
+  font-size: 40rpx;
+  text-align: center;
+  margin-bottom: 15rpx;
+}
+
+.company_name{
+  font-size: 40rpx;
+  font-weight: bolder;
+  padding: 10rpx 0rpx;
+}
+
+.padding-10{
+  padding: 10rpx 0rpx;
+  font-size: 30rpx;
+}
+
+.bottom_line{
+  border-bottom: 1rpx solid rgb(221, 221, 223);
+}
+
+.bottom_name{
+  padding: 40rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+
+.map_botton_list{
+  display: flex;
+}
+
+.map_botton{
+  padding: 10rpx 15rpx;
+  flex-basis: 25%;
+  text-align: center;
+}
+
+.notify_title{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.notify_content{
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.notify_content .dot{
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.notify_content .text{
+  padding-left: 10rpx;
+}
+
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}

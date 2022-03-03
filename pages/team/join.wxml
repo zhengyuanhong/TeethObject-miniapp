@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="logo">
+        <image src="{{adminUserInfo.avatar}}"></image>
+    </view>
+
+    <view class="company_name margin-top-sm">{{adminUserInfo.company.company_name}}-{{adminUserInfo.name}}</view>
+
+    <view class="reason  margin-top">邀请你加入他(她)的团队</view>
+
+    <view class="margin-top-xl text-gray text">接受邀请后：</view>
+    <view class="margin-top text-gray text1">1、参与线下市场活动</view>
+    <view class="margin-top text-gray text1">2、通过本平台维系客户</view>
+
+    <button wx:if='{{!load_success}}' class="cu-btn block bg-green margin-top-xl lg">
+    <text class="cuIcon-loading2 iconfont-spin"></text>加载中</button>
+    <button wx:if='{{load_success}}' bindtap="joinTeam" class="cu-btn block bg-green margin-top-xl lg">
+    <text class="iconfont-spin"></text>接受邀请</button>
+</view>

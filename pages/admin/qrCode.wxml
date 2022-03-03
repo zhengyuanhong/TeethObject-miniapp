@@ -1,0 +1,11 @@
+
+<view class="content">
+ <view class="title">你的推广码</view>
+
+ <view wx:if="{{qr_code}}" class="qr_code"><image src="{{qr_code}}"></image></view>
+
+ <view class="tip text-gray">用户线下推广，报名预约</view>
+
+ <button bindtap="saveQrcode" class="cu-btn round block bg-green margin-tb-sm lg">保存图片到相册</button>
+ <view class="space"></view>
+</view>

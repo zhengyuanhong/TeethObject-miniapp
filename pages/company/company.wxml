@@ -1,0 +1,152 @@
+<view class="container">
+  <view>
+    <image style="width:750rpx;height: 400rpx;" src="{{company.index_head_image}}"></image>
+  </view>
+
+  <view class="content">
+    <view class="company_info">
+      <view class="left">
+        <image src="{{company.logo}}"></image>
+      </view>
+      <view class="right">
+        <view class="name">{{company.name}}</view>
+        <view wx:if="{{salesman_name}}" style="margin-top: 10rpx;">口腔咨询师：{{salesman_name}}</view>
+        <view style="margin-top: 10rpx;" class="slogan">{{company.slogan}}</view>
+      </view>
+    </view>
+
+    <!-- 个人信息 -->
+    <view class="kanya_vip">
+      <image wx:if="{{card_img}}" class="img" bindtap="getCard" data-type="getCard" style="height: 265.5rpx;width: 713rpx;" src="{{card_img}}"></image>
+    </view>
+
+    <!-- 广告屏 -->
+    <view wx:if='{{adList.length > 0}}' class=" margin-top ad">
+      <swiper class="ad_swiper" circular="true" indicator-dots="true" autoplay="true" interval="3000">
+        <block wx:for="{{adList}}" wx:key='index'>
+          <swiper-item class="swiper-item">
+            <view bindtap="toAd" id="{{item.id}}" style="padding: 0rpx 10rpx;">
+              <image class="ad_img" src="{{item.image_url}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <!-- 菜单栏 -->
+    <view class="menu_list margin-top width-95">
+      <view class="menu_right">
+        <view bindtap="getCard" data-type="getCard" class="menu_right_bottom">
+          <image style="width:80rpx;height:60rpx;margin-top:10rpx;" src="/images/jiankang.png"></image>
+          <view class="menu_content">
+            <view class="menu_title">我的看牙卡</view>
+            <view class="menu_tip">享受优质服务</view>
+          </view>
+        </view>
+        <view bindtap="subscribeTooth" data-type="subscribeTooth" style="margin-top:10rpx;" class="menu_right_bottom">
+          <image style="width:80rpx;height:80rpx;" src="/images/jieya.png"></image>
+          <view class="menu_content">
+            <view class="menu_title">预约洁牙</view>
+            <view class="menu_tip">清新口气，预防牙病</view>
+          </view>
+        </view>
+
+        <view wx:if='{{is_admin || is_salesman}}' bindtap="toAdmin" style="margin-top:10rpx;" class="menu_right_bottom">
+          <image style="width:80rpx;height:80rpx;" src="/images/costume.png"></image>
+          <view class="menu_content">
+            <view class="menu_title">管理员端口</view>
+            <view class="menu_tip">方便快捷查询客户</view>
+          </view>
+        </view>
+      </view>
+      <view class="menu_right">
+        <view bindtap="formGua" data-type="formGua" class="menu_right_bottom">
+          <image style="width:80rpx;height:80rpx;" src="/images/pai.jpg"></image>
+          <view class="menu_content">
+            <view class="menu_title">0元拍片</view>
+            <view class="menu_tip">线上预约，就诊便捷</view>
+          </view>
+        </view>
+
+        <view bindtap="LookPrice" bindtap="LookPrice" style="margin-top:10rpx;" class="menu_right_bottom">
+          <image style="width:80rpx;height:80rpx;" src="/images/price.png"></image>
+          <view class="menu_content">
+            <view class="menu_title">价格计算</view>
+            <view class="menu_tip">一键计算价格</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 地图位置 -->
+    <view wx:if="{{company}}" class="common margin-top width-95">
+      <view class="map_title">— 联系我们 —</view>
+      <map id="myMap" style="width: 100%; height: 400rpx;" latitude="{{company.latitude}}" longitude="{{company.longitude}}" markers="{{company.markers}}" show-location></map>
+
+      <view class="company_name bottom_line">{{company.name}}</view>
+      <view bindtap="call" class="padding-10 bottom_line"><text style="color: gray;">电话：</text><text>{{sale_phone?sale_phone:company.phone}}</text>
+      </view>
+      <view bindtap="goThere" class="padding-10 bottom_line"><text style="color: gray;">地址：</text>{{company.address}}</view>
+      <view class="map_botton_list margin-top">
+        <view bindtap="goThere" class="map_botton">
+          <text class="cuIcon-location lg text-black" style="font-size: 50rpx;"></text>
+          <view>去这里</view>
+        </view>
+
+        <view bindtap="call" class="map_botton">
+          <text class="cuIcon-phone lg text-black" style="font-size: 50rpx;"></text>
+          <view>打电话</view>
+        </view>
+
+        <view bindtap="copyPhone" class="map_botton">
+          <text class="cuIcon-weixin lg text-black" style="font-size: 50rpx;"></text>
+          <view>
+            <view>添加微信</view>
+          </view>
+        </view>
+
+        <view class="map_botton">     
+            <text class="cuIcon-selectionfill lg text-black" style="font-size: 50rpx;"></text>
+              <view>好评9.5分</view>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="bottom_name">惠民看牙</view> -->
+    <view style="height: 100rpx;"></view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='notice'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content text-black" style="font-weight:bolder;">好像出了点问题</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      此功能需要<text class="text-green">允许</text>惠民看牙的消息通知。
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-cyan " bindtap="openDinYue">没有收到授权申请？</view>
+      <view class="action margin-0 flex-sub text-green solid-left" data-type="{{btn_type}}" bindtap="{{btn_type}}">再试一次
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='image'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="bg-img">
+      <view class="cu-bar justify-end">
+        <view class="content text-black" style="font-weight:bolder;">重新开启接收订阅消息</view>
+        <view class="action" bindtap="hideModal">
+          <text class="cuIcon-close "></text>
+        </view>
+      </view>
+      <view style="padding:0 20rpx;width:600rpx;text-align:center;margin:0 auto;">你可能不小心关闭了接收订阅消息，不用担心，去设置开启就好了</view>
+      <image style="margin-top:20rpx;width:600rpx;height:540rpx;" src="/images/dingyue.jpg"></image>
+    </view>
+    <view class="cu-bar bg-white">
+      <view class="action margin-0 flex-sub text-green solid-left" bindtap="setNotice">去设置</view>
+    </view>
+  </view>
+</view>

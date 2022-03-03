@@ -1,0 +1,39 @@
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{date_arr.date_text}}" wx:key='index' bindtap="tabSelect" data-id="{{index}}">
+    {{item}}/周{{date_arr.week[index]}}
+  </view>
+</scroll-view>
+
+<view wx:if='{{ad.length > 0}}' style="text-align: center;">
+  <image class="ad_img" bindtap="toAd" src="{{ad.image_url}}"></image>
+</view>
+
+<view class="show_date">以下是<text class="text-green">{{date_arr.date_text[TabCur]}}/周{{date_arr.week[TabCur]}}</text>的预约表</view>
+
+<view class="box">
+  <view wx:for="{{appoint_data}}" id="{{index}}" wx:key="index" bindtap="operate"   class="box_content {{item.is_appoint==1?'is_appoint':''}}" >
+    <view class="time">{{item.time}}</view>
+    <view class="success_status" wx:if='{{item.head>0&&item.is_appoint==0}}' >
+      <image class="success"  src="/images/yuyue.png"></image>
+      <view class="success_text">可约{{item.head}}位</view>
+    </view>
+
+    <view class="success_status" wx:if='{{item.head==0&&item.is_appoint==0}}' >
+      <image style="width: 65rpx;height: 65rpx;"  src="/images/faild.png"></image>
+      <view class="success_text" style="color: red;" >已约满</view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{appoint_info}}" class="card">
+    <view class="line"><text class="name">项目：</text><text class="content">{{appoint_info.obj_name}}</text></view>
+    <view class="line"><text class="name">地点：</text><text class="content">{{appoint_info.appoint_addr}}</text></view>
+    <view class="line"><text class="name">预约日期： </text><text class="content">{{appoint_info.appoint_date_at}}</text></view>
+    <view class="line"><text class="name">预约状态： </text><text class="content text-{{status[appoint_info.appoint_status].color}}">{{status[appoint_info.appoint_status].text}}</text></view>
+    <view class="line"><text class="name">温馨提示： </text><text class="content">请在预约时间前到达医院</text></view>
+    <view wx:if="{{appoint_info.appoint_status !== 'arrived'}}">
+      <view class="margin-tb-sm text-center">
+        <button bindtap="cancelAppoint" class="cu-btn bg-red">取消预约</button>
+      </view>
+    </view>
+  </view>

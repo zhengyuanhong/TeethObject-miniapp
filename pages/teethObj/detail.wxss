@@ -1,0 +1,8 @@
+.content{
+    line-height:80rpx
+}
+
+.box{
+    width: 95%;
+    margin: 40rpx auto;
+}

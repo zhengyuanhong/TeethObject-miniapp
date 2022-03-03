@@ -1,0 +1,30 @@
+<view class="bg"></view>
+<view class="container">
+    <view class="form_submit">
+        <view class="form_title">团队管理</view>
+        <view class="desc_title">添加成员，一起抢占市场</view>
+        <view class='container_content'>
+            <view class="text-grey padding-lr-lg margin-top">已添加({{current_salesman_num}}/{{max_salesman_num}})</view>
+            <button wx:if='{{is_admin}}' open-type="share" class="text-green padding-lr-lg margin-top add_bottom"><text class="cuIcon-roundadd lg text-green add_user_icon"></text> <text class="add_user"> 添加成员</text></button>
+
+            <view class="cu-list menu-avatar margin-top">
+                <view wx:for='{{salesman}}' wx:key='index' class="cu-item">
+                    <view class="cu-avatar radius df" style="background-image:url({{item.avatar}});"></view>
+                    <view class="content">
+                        <view class="text-black">
+                            <text class="text-cut">{{item.name}}</text>
+                        </view>
+                        <!-- <view class="text-gray text-sm flex">
+                            <text class="text-cut">凯尔，你被自己的光芒变的盲目！</text>
+                        </view> -->
+                    </view>
+                    <view wx:if="{{!((item.user_id==userInfo.id)|| !is_admin)}}" bindtap="delSale" data-index='{{index}}' class="action">
+                        <view class="text-white del_user">移除</view>
+                    </view>
+                </view>
+            </view>
+            <view style="height: 25rpx;"></view>
+        </view>
+        <view style="height: 100rpx;"></view>
+    </view>
+</view>

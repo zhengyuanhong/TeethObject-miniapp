@@ -1,0 +1,54 @@
+.bg{
+    width: 100%;
+    height: 160rpx;
+    background: #2bad41;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+  
+  .container{
+    width: 90%;
+    height: 400rpx;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 100rpx;
+    background-color: white;
+    border-radius: 20rpx;
+  }
+
+  .container_content{
+      background-color: white;
+      border-radius: 20rpx;
+  }
+
+  .form_title{
+    font-size: 45rpx;
+    padding: 70rpx 30rpx 0rpx 30rpx;
+    text-align: center;
+    font-weight: bolder;
+  }
+  
+  .desc_title{
+    font-size: 30rpx;
+    padding: 25rpx 30rpx 0rpx 30rpx;
+    text-align: center;
+  }
+
+  .add_user{
+      font-size: 34rpx;
+      font-weight: bolder;
+  }
+
+  .add_user_icon{
+      font-size: 31rpx;
+      font-weight: bolder;
+  }
+
+  .del_user{
+      background-color: red;
+      margin-right: 30rpx;
+      padding: 10rpx 10rpx;
+      border-radius: 10rpx;
+  }

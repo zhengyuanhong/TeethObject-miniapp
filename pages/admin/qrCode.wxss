@@ -1,0 +1,35 @@
+page {
+    background-color: #2bad41;
+}
+
+.content {
+    width: 80%;
+    margin: 100rpx auto;
+    background-color: white;
+    border-radius: 20rpx;
+
+}
+
+.title {
+    font-size: 40rpx;
+    text-align: center;
+    padding: 50rpx 0rpx;
+}
+
+.qr_code {
+    text-align: center;
+}
+
+.qr_code image {
+    width: 400rpx;
+    height: 400rpx;
+}
+
+.tip {
+    padding: 30rpx 0rpx;
+    text-align: center;
+}
+
+.space {
+    height: 40rpx;
+}

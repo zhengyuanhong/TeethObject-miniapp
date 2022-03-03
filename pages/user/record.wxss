@@ -1,0 +1,25 @@
+.container{
+  width: 95%;
+  margin: 0rpx auto;
+}
+
+.number{
+  font-size: 35rpx;
+  font-weight: bolder;
+}
+
+.card{
+  background: white;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+}
+
+.line{
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+
+.name{
+  font-weight: bolder;
+}

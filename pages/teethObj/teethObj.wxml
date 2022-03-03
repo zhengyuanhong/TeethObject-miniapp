@@ -1,0 +1,71 @@
+<view class="bg"></view>
+<view class="container">
+  <view class="box">
+    <view class="content width bottom_left_line">
+      <image src="/images/jie_ya.png" style="width: 100rpx;height:100rpx;" />
+      <view>洁牙</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="jie_ya" class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width bottom_left_line">
+      <image src="/images/ya_zhou.png" style="width: 100rpx;height:100rpx;" />
+      <view>牙周治疗</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="ya_zhou" bindtap="detail" class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width bottom_line">
+      <image src="/images/zhi_chi.png" style="width: 100rpx;height:100rpx;" />
+      <view>智齿拔除</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="zhi_chi"  class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width bottom_left_line">
+      <image src="/images/mei_bai.png" style="width: 100rpx;height:100rpx;" />
+      <view>美白牙齿</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="mei_bai" class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width bottom_left_line">
+      <image src="/images/zhongzhiya.png" style="width: 100rpx;height:100rpx;" />
+      <view>种植牙</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="zhong_zhi_ya" class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width bottom_line">
+      <image src="/images/jiao_zheng.png" style="width: 100rpx;height:100rpx;" />
+      <view>牙齿矫正</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="jiao_zheng"  class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width right_line">
+      <image src="/images/buya.png" style="width: 100rpx;height:100rpx;" />
+      <view>补牙</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="bu_ya"  class="look_botton">查看详情</button>
+
+    </view>
+
+    <view class="content width right_line">
+      <image src="/images/yachi.png" style="width: 100rpx;height:100rpx;" />
+      <view>隐形矫正</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="jiao_zheng1"  class="look_botton">查看详情</button>
+    </view>
+
+    <view class="content width">
+      <image src="/images/gudingya.png" style="width: 100rpx;height:100rpx;" />
+      <view>固定牙</view>
+      <!-- <button size="mini"  bindtap="detail" data-type="" open-type="contact" class="look_botton">查看详情</button> -->
+      <button size="mini"  bindtap="detail" data-type="gu_din_ya"  class="look_botton">查看详情</button>
+    </view>
+
+  </view>
+
+  <image wx:if='{{ad}}' class="ad_img" src="{{ad.image_url}}"></image>
+</view>

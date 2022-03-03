@@ -1,0 +1,38 @@
+.container{
+    width: 80%;
+    margin: 100rpx auto;
+}
+
+.logo{
+    text-align: center;
+}
+
+.logo image{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.company_name{
+    text-align: center;
+    font-size: 30rpx;
+}
+
+.reason{
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.text{
+    text-indent: 30rpx;
+    font-size: 30rpx;
+}
+
+.text1{
+    width: 75%;
+    margin: 20rpx auto;
+    font-size: 30rpx;
+}
+
+page{
+    background-color: white;
+}

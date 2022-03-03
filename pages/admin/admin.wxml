@@ -1,0 +1,51 @@
+<view class="UCenter-bg">
+    <image src="{{userInfo.avatar}}" class="png" mode="widthFix"></image>
+    <view class="text-xl">{{userInfo.name}}</view>
+    <view class="margin-top-sm">
+        <text>部门：市场部</text>
+    </view>
+</view>
+<!-- <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right">
+        <view class="text-xxl text-orange">122</view>
+        <view class="margin-top-sm">View</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+        <view class="text-xxl text-blue">33</view>
+        <view class="margin-top-sm">
+            <text></text>客户数量
+        </view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+        <view class="text-xxl text-green">122</view>
+        <view class="margin-top-sm">
+            <text class="cuIcon-fork"></text> Fork
+        </view>
+    </view>
+</view> -->
+
+<view class="cu-list grid col-3 no-border margin-lr-sm margin-top">
+    <view wx:if="{{is_admin || is_salesman}}" bindtap="toTeam" class="cu-item">
+        <view class="cuIcon-friendadd text-green">
+        </view>
+        <text>团队管理</text>
+    </view>
+
+    <view bindtap="toCustomer" class="cu-item">
+        <view class="cuIcon-friend text-orange">
+        </view>
+        <text>客户管理</text>
+    </view>
+
+    <view bindtap="toQrCode" class="cu-item">
+        <view class="cuIcon-qrcode text-green">
+        </view>
+        <text>生成二维码</text>
+    </view>
+
+    <view bindtap="toCustomerAppoint" class="cu-item">
+        <view class="cuIcon-calendar text-blue">
+        </view>
+        <text>客户预约</text>
+    </view>
+</view>

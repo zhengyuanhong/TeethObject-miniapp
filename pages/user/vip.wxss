@@ -1,0 +1,120 @@
+page {
+  background-color: #eee;
+}
+
+.logo {
+  border-radius: 50%;
+  border: 5rpx solid white;
+}
+
+.bottom_image{
+  position: relative;
+  width: 400rpx;
+  height: 204rpx;
+  left: 150rpx;
+  bottom: 100rpx;
+  opacity: 0.2;
+}
+
+.container {
+  width: 95%;
+  margin: 20rpx auto;
+}
+
+.container .card {
+  width: 100%;
+  height: 400rpx;
+  background: #2bad41;
+  border-radius: 20rpx;
+}
+
+.card .card_name {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 30rpx;
+  align-items: center;
+}
+
+.card .card_name .card_title {
+  margin-left: 10rpx;
+}
+
+.card .card_name .card_title .card_vip_name {
+  font-size: 40rpx;
+  color: white;
+  font-weight: bolder;
+}
+
+.card .card_name .card_title .card_vip_time {
+  font-size: 25rpx;
+  color: white;
+  margin-top: 10rpx;
+}
+
+.card .card_name .left {
+  display: flex;
+  align-items: center;
+}
+
+.card .card_number {
+  padding: 30rpx 30rpx;
+  color: white;
+  margin-top: 35rpx;
+  position: relative;
+  bottom: 200rpx;
+}
+
+.card .card_number .card_number_title {
+  font-size: 30rpx;
+}
+
+.card .card_number .line {
+  border: 1px solid white;
+  width: 100rpx;
+  margin-top: 20rpx;
+  background: white;
+}
+
+.card .card_number .number {
+  margin-top: 20rpx;
+}
+
+.user{
+  background: white;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.user .user_info{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 80rpx;
+}
+
+.user_title{
+  font-size: 30rpx;
+  font-weight: bold;
+  color:grey;
+}
+.user_content{
+  margin-top: 20rpx;
+}
+
+.tip{
+  margin-top: 20rpx;
+  color: grey;
+}
+
+.tip .tip_title{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.margin-top{
+  margin-top: 10rpx;
+}
+.shu_xian{
+  height: 95rpx;
+  border-left: 1px solid gainsboro;
+}

@@ -1,0 +1,18 @@
+<view class="box">
+    <view bindtap="toIndex" wx:for="{{company}}" wx:key='index' class='name' id='{{item.id}}' class="company_info">
+      <view class="left">
+        <image src="{{item.logo}}"></image>
+      </view>
+      <view class="right">
+        <view class="company_name">{{item.name}}</view>
+        <view class="juli">距离你{{item.distance}}</view>
+      </view>
+    </view>
+    <view></view>
+    <view class="text-gray text-center">没数据？下拉刷新试一试</view>
+</view>
+
+<view wx:if='{{company.length == 0}}' style="margin: 300rpx auto;text-align: center;">
+  <image style="width: 164rpx;height:164rpx;" src="/images/yiyuan.png"></image>
+  <view style="margin-top: 10rpx;color: grey;">暂无附近的口腔~</view>
+</view>

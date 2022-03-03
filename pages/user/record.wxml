@@ -1,0 +1,21 @@
+<view class="container">
+  <view wx:for="{{records}}" wx:key="index" class="card margint-top">
+    <!-- <view class="text-green number">NO.</view> -->
+    <view class="line"><text class="name">项目：</text><text class="content">{{item.obj_name}}</text></view>
+    <view class="line"><text class="name">就诊地点：</text><text class="content">{{item.appoint_addr?item.appoint_addr:'无'}}</text></view>
+    <view wx:if="{{item.type != 2}}" class="line"><text class="name">预约日期： </text><text class="content">{{item.appoint_date_at}}</text></view>
+    <view class="line"><text class="name">预约状态： </text><text class="content text-{{status[item.appoint_status].color}}">{{status[item.appoint_status].text}}</text></view>
+
+    <view wx:if="{{item.appoint_status !== 'arrived' && item.appoint_status !=='cancel'}}">
+      <view class="margin-tb-sm text-center">
+        <button bindtap="cancelAppoint" data-index='{{index}}' class="cu-btn bg-red">取消预约</button>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view wx:if='{{records.length == 0}}' style="margin: 300rpx auto;text-align: center;">
+  <image style="width: 164rpx;height:128rpx;" src="/images/kong.png"></image>
+  <view style="margin-top: 10rpx;color: grey;">空空如也~</view>
+</view>

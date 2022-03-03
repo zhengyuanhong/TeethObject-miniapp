@@ -1,0 +1,131 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "价格查询",
+                    "pathName": "pages/teethObj/teethObj",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "预约记录",
+                    "pathName": "pages/user/record",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "预约洗牙",
+                    "pathName": "pages/teeth/teeth",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/user/drawCard",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "公众号文章",
+                    "pathName": "pages/logs/logs",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "预约记录",
+                    "pathName": "pages/user/record",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "客户管理",
+                    "pathName": "pages/custome/custome",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "活动文章",
+                    "pathName": "pages/teeth/teeth",
+                    "query": "id=1",
+                    "scene": null
+                },
+                {
+                    "name": "",
+                    "pathName": "pages/company/company",
+                    "query": "company_id=6",
+                    "scene": null
+                },
+                {
+                    "name": "创建二维码",
+                    "pathName": "pages/qrcode/qrcode",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "医院首页",
+                    "pathName": "pages/company/company",
+                    "query": "scene=company_id%3D1%26salesman_id%3D1",
+                    "scene": null,
+                    "launchMode": "default"
+                },
+                {
+                    "name": "团队",
+                    "pathName": "pages/team/team",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "管理员入口",
+                    "pathName": "pages/admin/admin",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "加入",
+                    "pathName": "pages/team/join",
+                    "query": "invite_code=621713f0b88ac&admin_user_id=6",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "领取看牙卡",
+                    "pathName": "pages/user/drawCard",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "生成二维码",
+                    "pathName": "pages/admin/qrCode",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "客户预约单",
+                    "pathName": "pages/admin/customerAppoint",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "牙齿项目详情",
+                    "pathName": "pages/teethObj/detail",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

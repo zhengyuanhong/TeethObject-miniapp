@@ -1,0 +1,62 @@
+<view class="container">
+  <view class="card">
+    <view class="card_name">
+      <view class="left">
+        <image style="width:120rpx;height:120rpx;" class="logo" src="{{user_info.avatar}}"></image>
+        <view class="card_title">
+          <view class="card_vip_name">{{user_info.name}}</view>
+          <view class="card_vip_time">有效期：{{user_card.is_receive?user_card.expired_at:'未领取卡'}}</view>
+        </view>
+      </view>
+      <view class="right">
+        <image style="width:100rpx;height:50rpx;" src="/images/VIP.png"></image>
+      </view>
+    </view>
+
+    <image class="bottom_image" src="/images/logo.png"></image>
+
+    <view class="card_number">
+      <view class="card_number_title">{{user_card.name?user_card.name:'**********'}}</view>
+      <view class="line"></view>
+      <view class="number">{{user_card.number?user_card.number:'*** **** **** ****'}}</view>
+    </view>
+  </view>
+
+  <view class="user">
+    <view class="user_info">
+      <view>
+        <view class="user_title">预约次数</view>
+        <view class="user_content">{{user_card.appoint_count?user_card.appoint_count:0}}次</view>
+      </view>
+
+      <view>
+        <view class="shu_xian"></view>
+      </view>
+
+      <view>
+        <view class="user_title">会员积分</view>
+        <view class="user_content">{{user_card.integral?user_card.integral:0}}分</view>
+      </view>
+
+    </view>
+    <button wx:if='{{!user_card.is_receive}}' bindtap="drawCard" style="margin:20rpx auto;" class="cu-btn round line-green">立即领取</button>
+  </view>
+
+  <view bindtap="getRecord" style="border-radius: 10rpx;margin-top:20rpx;" class="cu-list menu">
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="cuIcon-circlefill text-grey"></text>
+        <text class="text-grey">预约记录</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="tip">
+    <view class="tip_title">看牙卡使用权益</view>
+    <view class="margin-top">1，持卡可以享受会员的尊贵服务，预约挂号，0元拍片，奖品兑换</view>
+    <view class="margin-top">2，此卡免费领取，积分不找零、不提现、不退换</view>
+    <view class="margin-top">3，本卡有效期请以合约为准，从开卡日期起计算</view>
+    <view class="margin-top">4，会员资料必填项须填写真实、完整，否则，会员享有的权益将受到影响</view>
+    <view class="margin-top">5，此卡的最终解释权归本店所有</view>
+  </view>
+</view>

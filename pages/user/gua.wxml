@@ -1,0 +1,41 @@
+<view class="bg"></view>
+<view class="container">
+  <view class="form_submit">
+    <view class="form_title">0元拍片</view>
+    <form bindsubmit="submit">
+      <view class="cu-form-group">
+        <view class="title">姓名</view>
+        <input placeholder="请输入您的名字" name='name' value="{{name}}"></input>
+        <button bindtap="useCard" class="cu-btn bg-green shadow" style="width: 200rpx;">自动填写</button>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">电话</view>
+        <input value="{{phone}}" name='phone' type="number" maxlength="12" placeholder="请输入您的电话"></input>
+      </view>
+      <view class="cu-form-group">
+        <view class="title">日期</view>
+        <picker mode="date" value="{{date}}" start="{{date}}" end="2050-09-01" bindchange="DateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group">
+        <view class="title">时间</view>
+        <picker bindchange="TimeChange" range="{{timeArr}}" value='{{time_index}}'>
+          <view class="picker">
+            {{timeArr[time_index]}}
+          </view>
+        </picker>
+      </view>
+      <view class="tip1">建议提前两小时申请</view>
+      <view class="tip">为了保护您的隐私安全，信息已加密</view>
+      <view class="form-botton">
+        <button form-type="submit" style="margin:20rpx auto;" class="cu-btn round line-green">立即预约</button>
+      </view>
+    </form>
+  </view>
+
+  <image wx:if='{{ad}}' bindtap="toAd" class="ad_img" src="{{ad.image_url}}"></image>
+</view>
