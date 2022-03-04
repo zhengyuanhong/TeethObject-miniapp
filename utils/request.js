@@ -1,5 +1,5 @@
-// const url = 'http://192.168.2.20:8000/api/v1'
-const url = 'https://teeth.manzhi.top/api/v1'
+const url = 'http://192.168.2.20:8000/api/v1'
+// const url = 'https://teeth.manzhi.top/api/v1'
 
 const showErrToast = (msg) => {
   wx.showToast({
