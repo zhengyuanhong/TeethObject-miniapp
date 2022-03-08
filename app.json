@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/regCom/regCom",
     "pages/admin/admin",
     "pages/admin/qrCode",
     "pages/teethObj/detail",

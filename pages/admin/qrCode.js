@@ -6,7 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        qr_code: ''
+        qr_code: '',
+        savePhotoFail: false
     },
     onLoad: function (options) {
         var that = this
@@ -16,6 +17,14 @@ Page({
                 qr_code: res.qr_code
             })
         })
+    },
+    callback(res) {
+        console.log(res)
+        if (res.detail.authSetting['scope.writePhotosAlbum']) {
+            this.setData({
+                savePhotoFail: false
+            })
+        }
     },
     saveQrcode: function () {
         var that = this

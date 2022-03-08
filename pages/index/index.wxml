@@ -1,0 +1,31 @@
+<view class="content">
+    <block wx:if='{{company}}'>
+        <view class="title">你的推广码</view>
+
+        <view wx:if="{{qr_code || status == 2}}" class="qr_code">
+            <image bindtap="viewImg" src="{{qr_code}}"></image>
+        </view>
+
+        <view wx:else style="text-align: center;">
+            <image style="width: 200rpx;height: 200rpx;" src="/images/wait.png"></image>
+        </view>
+
+        <view class="tip text-gray">用户线下推广，报名预约</view>
+
+        <button wx:if='{{status==2 && savePhotoFail==false}}' bindtap="saveQrcode" class="cu-btn round block bg-green margin-tb-sm lg">保存图片到相册</button>
+        <button wx:if='{{status==1}}' bindtap="saveQrcode" class="cu-btn round block bg-green margin-tb-sm lg">审核中，请耐心等待</button>
+        <button wx:if='{{savePhotoFail}}' class="cu-btn round block bg-green margin-tb-sm lg" open-type="openSetting" bindopensetting="callback">授权访问图片</button>
+    </block>
+    <block wx:else>
+        <view class="title1">服务说明</view>
+        <view class="content_tip text-black">
+            <view>本服务是为帮口腔门诊更方便开展业务而开发的小程序，帮助口腔门诊的营销业务步步推进。</view>
+            <view class="margin-top">1，提供二维码，随时随地开展扫码营销工作</view>
+            <view class="margin-top">2，了解顾客需求，全盘掌握业务环节</view>
+        </view>
+        <button wx:if="{{loading}}" class="cu-btn round block bg-green margin-tb-lg ms"><text class="cuIcon-loading2 iconfont-spin"></text>加载中</button>
+        <button wx:else bindtap="toUse" class="cu-btn round block bg-green margin-tb-lg ms">立刻使用</button>
+    </block>
+    <button wx:if='{{company_id}}' bindtap="toCompany" class="cu-btn round block bg-green margin-tb-sm lg" >点击进入</button>
+    <view class="space"></view>
+</view>

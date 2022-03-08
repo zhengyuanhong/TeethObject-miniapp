@@ -1,5 +1,5 @@
-const url = 'http://192.168.2.20:8000/api/v1'
-// const url = 'https://teeth.manzhi.top/api/v1'
+// const url = 'http://localhost:8000/api/v1'
+const url = 'https://teeth.manzhi.top/api/v1'
 
 const showErrToast = (msg) => {
   wx.showToast({
@@ -714,6 +714,107 @@ var queryPrice = function (app, data, callback) {
   })
 }
 
+var uploadImg = function (app, path, callback) {
+  wx.uploadFile({
+    url: url + '/upload-img', //仅为示例，非真实的接口地址
+    header:{
+      'Authorization': 'Bearer ' + app.globalData.userInfo.token,
+      "Content-Type": "multipart/form-data"
+    },
+    filePath: path,
+    name: 'img',
+    success: function (e) {
+      console.log(e)
+      if (e.data.code === 401) {
+        console.log('权限不够')
+      } else if (e.data.code === 201) {
+        showErrToast(e.data.message)
+      } else {
+        callback(e)
+      }
+    },
+    complete: function () {
+      wx.hideNavigationBarLoading()
+    }
+  })
+}
+
+var settleCompany = function (app, data, callback) {
+  wx.showNavigationBarLoading()
+  wx.request({
+    url: url + '/settle',
+    method: 'post',
+    header: {
+      'Authorization': 'Bearer ' + app.globalData.userInfo.token
+    },
+    data: data,
+    success: function (e) {
+      console.log(e)
+      if (e.data.code === 401) {
+        console.log('权限不够')
+      } else if (e.data.code === 201) {
+        showErrToast(e.data.message)
+      } else {
+        callback(e.data.data)
+      }
+    },
+    complete: function () {
+      wx.hideNavigationBarLoading()
+    }
+  })
+}
+
+
+var ownCompanyQrCode = function (app, data, callback) {
+  wx.showNavigationBarLoading()
+  wx.request({
+    url: url + '/own-company-qr-code',
+    method: 'get',
+    header: {
+      'Authorization': 'Bearer ' + app.globalData.userInfo.token
+    },
+    data: data,
+    success: function (e) {
+      console.log(e)
+      if (e.data.code === 401) {
+        console.log('权限不够')
+      } else if (e.data.code === 201) {
+        showErrToast(e.data.message)
+      } else {
+        callback(e.data.data)
+      }
+    },
+    complete: function () {
+      wx.hideNavigationBarLoading()
+    }
+  })
+}
+
+var updateUserInfo = function (app, data, callback) {
+  wx.showNavigationBarLoading()
+  wx.request({
+    url: url + '/update-user-info',
+    method: 'post',
+    header: {
+      'Authorization': 'Bearer ' + app.globalData.userInfo.token
+    },
+    data: data,
+    success: function (e) {
+      console.log(e)
+      if (e.data.code === 401) {
+        console.log('权限不够')
+      } else if (e.data.code === 201) {
+        showErrToast(e.data.message)
+      } else {
+        callback(e.data.data)
+      }
+    },
+    complete: function () {
+      wx.hideNavigationBarLoading()
+    }
+  })
+}
+
 
 
 module.exports = {
@@ -746,5 +847,9 @@ module.exports = {
   getCustomerRecord,
   getTeethDetail,
   queryPrice,
+  uploadImg,
+  settleCompany,
+  ownCompanyQrCode,
+  updateUserInfo,
   test
 }

@@ -1,85 +1,90 @@
 const request = require('../../utils/request.js')
-var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
-var qqmapsdk = new QQMapWX({
-    key: 'O4ABZ-2FQRJ-O63FE-KBQEI-YNZHS-5GBFJ' // 必填
-});
 const app = getApp()
 Page({
-
     data: {
-        company: [],
-        page: 1,
-        lon: 0,
-        lat: 0
+        qr_code: '',
+        company: false,
+        status: false,
+        savePhotoFail: false,
+        company_id:false,
+        loading:true
+    },
+    viewImg() {
+        var that = this
+        wx.previewImage({
+            urls: [that.data.qr_code],
+            current: that.data.qr_code
+        });
     },
     onLoad: function (options) {
 
     },
-    onReachBottom() {
-        this.getCompany(this.data.lat, this.data.lon)
-    },
-    getCompany(lat, lon) {
-        var that = this
-        var data = {
-            page: this.data.page,
-            lat: lat,
-            lon: lon
+    userView(){
+        var company_id = wx.getStorageSync('company_id') || false
+        if (company_id) {
+            this.setData({
+                company_id: company_id
+            })
         }
-        request.getCompany(app, data, (res) => {
-            console.log('getCompany', res)
-            if (res.length > 0) {
-                // that.getDistance(res)
-                console.log(res)
-                that.setData({
-                    company: that.sortDis(that.data.company.concat(res)),
-                    page: that.data.page + 1
-                })
-            }
-        })
     },
-    toIndex(e) {
-        console.log(e)
-        var id = e.currentTarget.id
-        wx.navigateTo({
-            url: '/pages/company/company?scene=' + encodeURIComponent('company_id=' + id)
-        })
-    },
-    getLocal() {
+    onShow() {
         var that = this
-        wx.getLocation({
-            type: 'wgs84',
-            success(res) {
-                const latitude = res.latitude
-                const longitude = res.longitude
-                console.log('getLocal', res)
-                that.getCompany(res.latitude, res.longitude)
-                that.setData({
-                    lat: res.latitude,
-                    lon: res.longitude
-                })
-            }
-        })
-    },
-    sortDis(arr) {
-        return arr.sort((a, b) => {
-            return a.distance - b.distance
-        })
-    },
-    onReady() {
-        var that = this
+
+        that.userView()
+
         app.userLogin().then((res) => {
-            console.log('promise同步', res)
-            that.getLocal()
+            request.ownCompanyQrCode(app, null, (res1) => {
+                console.log('res1', res1)
+                that.setData({
+                    qr_code: res1.qr_code,
+                    status: res1.status,
+                    company: res1.company,
+                    loading:false
+                })
+            })
         })
     },
-    onPullDownRefresh() {
-        this.onReady()
-        wx.stopPullDownRefresh()
+    saveQrcode: function () {
+        var that = this
+        wx.downloadFile({
+            url: that.data.qr_code,
+            success(res) {
+                if (res.statusCode === 200) {
+                    console.log('下载', res.tempFilePath)
+                    wx.saveImageToPhotosAlbum({
+                        filePath: res.tempFilePath,
+                        success: function (res) {
+                            request.showErrToast('保存成功')
+                        },
+                        fail: function (res) {
+                            console.log(res)
+                            console.log('fail')
+                            that.setData({
+                                savePhotoFail: true
+                            })
+                        }
+                    })
+                }
+            }
+        })
     },
-    onShareAppMessage: function (res) {
-        return {
-          title: '小民看牙',
-          path: 'pages/index/index'
+    callback(res) {
+        console.log(res)
+        if (res.detail.authSetting['scope.writePhotosAlbum']) {
+            this.setData({
+                savePhotoFail: false
+            })
         }
-      }
+    },
+    toUse() {
+        wx.navigateTo({
+            url: '/pages/regCom/regCom',
+        })
+    },
+    toCompany() {
+        var that = this
+        wx.navigateTo({
+            url: '/pages/company/company?scene=' + encodeURIComponent('company_id=' + that.data.company_id)
+        })
+    }
 })

@@ -6,6 +6,7 @@
 
  <view class="tip text-gray">用户线下推广，报名预约</view>
 
- <button bindtap="saveQrcode" class="cu-btn round block bg-green margin-tb-sm lg">保存图片到相册</button>
+ <button wx:if='{{savePhotoFail}}' class="cu-btn round block bg-green margin-tb-sm lg" open-type="openSetting" bindopensetting="callback">授权访问图片</button>
+ <button wx:else bindtap="saveQrcode" class="cu-btn round block bg-green margin-tb-sm lg">保存图片到相册</button>
  <view class="space"></view>
 </view>

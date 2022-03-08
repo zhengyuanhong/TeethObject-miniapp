@@ -1,6 +1,11 @@
 <view class="UCenter-bg">
-    <image src="{{userInfo.avatar}}" class="png" mode="widthFix"></image>
-    <view class="text-xl">{{userInfo.name}}</view>
+    <block wx:if='{{userInfo.avatar}}'>
+        <image src="{{userInfo.avatar}}" class="png" mode="widthFix"></image>
+        <view class="text-xl">{{userInfo.name}}</view>
+    </block>
+    <block wx:else>
+        <button bindtap="getUserInfo" class="cu-btn text-green round block bg-white margin-tb-lg ms">登录</button>
+    </block>
     <view class="margin-top-sm">
         <text>部门：市场部</text>
     </view>

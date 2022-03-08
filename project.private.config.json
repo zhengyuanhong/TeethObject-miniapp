@@ -63,7 +63,8 @@
                 {
                     "name": "",
                     "pathName": "pages/company/company",
-                    "query": "company_id=6",
+                    "query": "sence=company_id%3D1",
+                    "launchMode": "default",
                     "scene": null
                 },
                 {
@@ -75,9 +76,9 @@
                 {
                     "name": "医院首页",
                     "pathName": "pages/company/company",
-                    "query": "scene=company_id%3D1%26salesman_id%3D1",
-                    "scene": null,
-                    "launchMode": "default"
+                    "query": "scene=company_id%3D6",
+                    "launchMode": "default",
+                    "scene": null
                 },
                 {
                     "name": "团队",
@@ -94,7 +95,7 @@
                 {
                     "name": "加入",
                     "pathName": "pages/team/join",
-                    "query": "invite_code=621713f0b88ac&admin_user_id=6",
+                    "query": "invite_code=6225ec273680e&admin_user_id=null",
                     "launchMode": "default",
                     "scene": null
                 },
@@ -108,8 +109,8 @@
                     "name": "生成二维码",
                     "pathName": "pages/admin/qrCode",
                     "query": "",
-                    "launchMode": "default",
-                    "scene": null
+                    "scene": null,
+                    "launchMode": "default"
                 },
                 {
                     "name": "客户预约单",

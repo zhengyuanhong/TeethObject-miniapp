@@ -47,6 +47,7 @@ Page({
         this.setData({
             userInfo: wx.getStorageSync('userInfo')
         })
+        this.inviteUser()
     },
     inviteUser() {
         return new Promise((resolve) => {
@@ -65,14 +66,10 @@ Page({
     onShareAppMessage: function (res) {
         var that = this
         if (res.from === 'button') {
-            that.inviteUser().then((res) => {
-                that.invite_code = res.invite_code
-                that.admin_user_id = res.admin_user_id
-            })
             return {
                 title: "邀请你加入我的团队",
                 imageUrl: '/images/share.jpg',
-                path: 'pages/team/join?invite_code=' + that.invite_code + '&admin_user_id=' + that.admin_user_id
+                path: 'pages/team/join?invite_code=' + that.data.invite_code + '&admin_user_id=' + that.data.admin_user_id
             }
         }
         return {
