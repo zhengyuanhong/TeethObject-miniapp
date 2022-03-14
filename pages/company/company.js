@@ -14,7 +14,8 @@ Page({
     card_img: '/images/card.jpg',
     salesmanInfo: {},
     salesman_name: '',
-    sale_phone: ''
+    sale_phone: '',
+    activity: ''
   },
   onLoad: function (e) {
     var sence = this.parseQueryString(decodeURIComponent(e.scene))
@@ -40,6 +41,7 @@ Page({
       if (sence.salesman_id !== undefined) {
         that.getOtherUser(sence.salesman_id)
       }
+      that.getOnActivity(sence.company_id, sence.activity_id)
     })
   },
   onReady() {
@@ -72,15 +74,26 @@ Page({
           is_salesman: res.data.is_salesman
         })
 
-        wx.setNavigationBarTitle({
-          title: res.data.company.name,
-        })
-
         wx.setStorageSync('role', {
           is_admin: res.data.is_admin,
           is_salesman: res.data.is_salesman
         })
       }
+    })
+  },
+  getOnActivity(company_id, activity_id) {
+    var that = this
+    request.getOneActivity(app, {
+      company_id: company_id,
+      activity_id: activity_id
+    }, (res) => {
+      console.log('getOneActivity', res)
+      that.setData({
+        activity: res
+      })
+      wx.setNavigationBarTitle({
+        title: res.name,
+      })
     })
   },
   toAd(e) {
@@ -248,7 +261,8 @@ Page({
     wx.setClipboardData({
       data: phone,
       success: function () {
-        console.log('已复制微信号')
+        console.log('微信号复制成功')
+        request.showErrToast('微信号复制成功')
       }
     })
   },

@@ -1,4 +1,5 @@
-// pages/admin/admin.js
+const request = require("../../utils/request.js")
+var app = getApp()
 Page({
   data: {
     userInfo: {},
@@ -29,9 +30,46 @@ Page({
       url: '/pages/admin/qrCode',
     })
   },
+  activity(){
+    wx.navigateTo({
+      url: '/pages/admin/activity',
+    })
+  },
   toCustomerAppoint(){
     wx.navigateTo({
       url: '/pages/admin/customerAppoint',
+    })
+  },
+  createAct(){
+      wx.navigateTo({
+        url: '/pages/admin/createAct',
+      })
+  },
+  getUserInfo() {
+    var that = this,
+      FormData = {}
+    wx.getUserProfile({
+      desc: '用于完善会员资料',
+      success: (res) => {
+        console.log(res)
+        FormData.gender = res.userInfo.gender
+        FormData.avatar = res.userInfo.avatarUrl
+        FormData.name = res.userInfo.nickName
+
+        request.updateUserInfo(app, FormData, (res1) => {
+          request.showErrToast('登录成功')
+          var user_info = wx.getStorageSync('userInfo')
+          if (user_info) {
+            user_info.name = res.userInfo.nickName
+            user_info.avatar = res.userInfo.avatarUrl
+            user_info.gender = res.userInfo.gender
+            wx.setStorageSync('userInfo', user_info)
+            that.setData({
+              userInfo: user_info
+            })
+          }
+        })
+      }
     })
   }
 })

@@ -1,0 +1,66 @@
+<form bindsubmit="submit">
+	<view class="cu-bar bg-white margin-top">
+		<view class="action">
+			首页Banner(750px*200px)
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:if='{{indexImg}}' bindtap="ViewImage" data-type='indexImg' data-url="{{indexImg}}">
+				<image src='{{indexImg}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-type='indexImg'>
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" data-type='indexImg' wx:if="{{!indexImg}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+    <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			上传logo(64px*64px)
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:if='{{logoImg}}' bindtap="ViewImage" data-type='logoImg' data-url="{{logoImg}}">
+				<image src='{{logoImg}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-type="logoImg">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" data-type='logoImg' wx:if="{{!logoImg}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+
+	<view class="cu-form-group margin-top">
+		<view class="title">名称</view>
+		<input name='company_name' placeholder="输入名称"></input>
+	</view>
+
+    <view class="cu-form-group margin-top">
+		<view class="title">标语</view>
+		<input maxlength="20" name='slogan' placeholder="slogan"></input>
+	</view>
+
+	<view class="cu-form-group">
+		<view class="title">地址</view>
+		<input value="{{address}}" maxlength="50" name='address' placeholder="输入你的位置"></input>
+        <button bindtap="chooseAddr" class="cu-btn bg-green" style="width: 200rpx;">获取位置</button>
+	</view>
+
+    <input hidden="true" value="{{latitude}}" name='lat'></input>
+    <input hidden="true" value="{{longitude}}" name='lon'></input>
+
+	<view class="cu-form-group">
+		<view class="title">手机号码</view>
+		<input maxlength="12" name='phone' value='{{phone}}' type="number" placeholder="输入电话号码"></input>
+            <button bindgetphonenumber="getPhoneNumber" open-type="getPhoneNumber" class="cu-btn bg-green" style="width: 200rpx;">获取手机号</button>
+	</view>
+
+    <button form-type="submit" class="cu-btn block bg-green margin-tb-lg gl">立即提交</button>
+</form>

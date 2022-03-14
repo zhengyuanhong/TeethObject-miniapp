@@ -81,29 +81,31 @@
 
 .container .content .menu_list{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   background: white;
   border-radius: 10rpx;
+  padding: 20rpx 30rpx;
+  flex-wrap: wrap;
 }
 
-.container .content .menu_right{
+.menu_list .menu{
   flex-basis: 50%;
 }
 
-.container .content .menu_right .menu_right_bottom{
+.container .content .menu_bottom{
   background: white;
   border-radius: 10rpx;
   padding: 20rpx 10rpx 20rpx 10rpx;
   display: flex;
 }
-.menu_right_bottom .menu_content{
+.menu_bottom .menu_content{
   margin-left: 10rpx;
 }
-.menu_right_bottom .menu_content .menu_title{
+.menu_bottom .menu_content .menu_title{
   font-weight: bolder;
   font-size: 32rpx;
 }
-.menu_right_bottom .menu_content .menu_tip{
+.menu_bottom .menu_content .menu_tip{
 font-size: 25rpx;
 color: gray;
 margin-top: 5rpx;
@@ -237,4 +239,10 @@ margin-top: 5rpx;
   transform: scale(calc(0.5 + var(--index) / 10));
   margin-left: calc(var(--left) * 100rpx - 150rpx);
   z-index: var(--index);
+}
+
+.map{
+  margin-top: 20rpx;
+  background-color: white;
+  padding: 20rpx;
 }

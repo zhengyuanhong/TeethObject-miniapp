@@ -9,7 +9,8 @@
 
             <view class="cu-list menu-avatar margin-top">
                 <view wx:for='{{salesman}}' wx:key='index' class="cu-item">
-                    <view class="cu-avatar radius df" style="background-image:url({{item.avatar}});"></view>
+                    <view wx:if='{{item.avatar}}' class="cu-avatar radius df" style="background-image:url({{item.avatar}});"></view>
+                    <view wx:else class="cu-avatar radius df" style="background-image:url('/images/user.png');"></view>
                     <view class="content">
                         <view class="text-black">
                             <text class="text-cut">{{item.name}}</text>

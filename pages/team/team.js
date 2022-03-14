@@ -5,13 +5,23 @@ Page({
         salesman: [],
         max_salesman_num: 20,
         current_salesman_num: 0,
-        is_admin:false,
-        is_salesman:false,
-        userInfo: {}
+        is_admin: false,
+        is_salesman: false,
+        userInfo: {},
+        invite_code: '', // = res.invite_code
+        admin_user_id: '' // = res.admin_user_id
     },
     onLoad: function (options) {
         this.setData(wx.getStorageSync('role'))
         this.getSale()
+        var that = this
+        that.inviteUser().then((res) => {
+            that.setData({
+                invite_code: res.invite_code,
+                admin_user_id: res.admin_user_id
+            })
+
+        })
     },
     getSale() {
         var that = this
@@ -65,14 +75,10 @@ Page({
     onShareAppMessage: function (res) {
         var that = this
         if (res.from === 'button') {
-            that.inviteUser().then((res) => {
-                that.invite_code = res.invite_code
-                that.admin_user_id = res.admin_user_id
-            })
             return {
                 title: "邀请你加入我的团队",
                 imageUrl: '/images/share.jpg',
-                path: 'pages/team/join?invite_code=' + that.invite_code + '&admin_user_id=' + that.admin_user_id
+                path: 'pages/team/join?invite_code=' + this.data.invite_code + '&admin_user_id=' + this.data.admin_user_id
             }
         }
         return {

@@ -1,6 +1,9 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/regCom/regCom",
+    "pages/admin/activity",
+    "pages/admin/createAct",
     "pages/admin/admin",
     "pages/admin/qrCode",
     "pages/teethObj/detail",

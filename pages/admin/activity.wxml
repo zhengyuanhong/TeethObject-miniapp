@@ -1,0 +1,27 @@
+<view class="box">
+    <view bindtap="toIndex" wx:for="{{activity}}" wx:key='index' class='name' data-index='{{index}}' id='{{item.company_id}}' class="activity_info">
+        <view class="left">
+            <view class="activity_name">{{item.name}}</view>
+            <view class="activity_tag">
+                <view class="tag_title">活动内容：</view>
+                <view wx:for='{{item.content.menu}}' wx:key='index' wx:for-index='key' wx:for-item='value' class="tag text-size">{{value.text}}</view>
+            </view>
+
+            <view style="margin-top: 15rpx;">
+                <view class="tag_title">活动进度：<text class="text-green">进行中</text></view>
+            </view>
+            <view class="edit_btn">
+                <view bindtap="edit" data-type='edit' data-id='{{item.id}}' class="btn text-white bg-green">编辑</view>
+                <view bindtap="delete" data-index='{{index}}' class="btn text-white bg-red">删除</view>
+            </view>
+        </view>
+        <!-- <view class="right">
+        <view class="text-green">进行中</view>
+      </view> -->
+    </view>
+</view>
+
+<view wx:if='{{company.length == 0}}' style="margin: 300rpx auto;text-align: center;">
+    <image style="width: 164rpx;height:164rpx;" src="/images/kong.png"></image>
+    <view style="margin-top: 10rpx;color: grey;">暂无数据~</view>
+</view>
