@@ -3,7 +3,7 @@ const app = getApp()
 // pages/regCom/regCom.js
 Page({
     data: {
-        indexImg: '',
+        indexImg: 'https://teeth.manzhi.top/storage/users/pZ5MVO9tZUrgutksDiaoaamB1aNe3wIs69obsNSd.jpg',
         address: '',
         phone: '',
         name: '',

@@ -75,9 +75,9 @@
                 {
                     "name": "医院首页",
                     "pathName": "pages/company/company",
-                    "query": "scene=company_id%3D6%26activity_id%3D4",
-                    "launchMode": "default",
-                    "scene": null
+                    "query": "scene=company_id%3D1%26activity_id%3D1",
+                    "scene": null,
+                    "launchMode": "default"
                 },
                 {
                     "name": "团队",
@@ -129,8 +129,8 @@
                     "name": "添加口腔",
                     "pathName": "pages/regCom/regCom",
                     "query": "",
-                    "scene": null,
-                    "launchMode": "default"
+                    "launchMode": "default",
+                    "scene": null
                 }
             ]
         }
